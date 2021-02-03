@@ -1,0 +1,34 @@
+@import url('https://use.typekit.net/krp5hcc.css');
+
+* {
+  font-family: 'proxima nova', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+}
+
+.deegree_container {
+  display: flex;
+  align-items: center;
+}
+
+.grader {
+  font-size: 2rem;
+}
+
+.grader_font {
+  font-size: 3rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.oversikt {
+  margin-top: 30px;
+  margin-left: 30px;
+}

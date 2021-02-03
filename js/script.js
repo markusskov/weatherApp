@@ -1,17 +1,23 @@
 function getWeather() {
   fetch(
-    'https://api.openweathermap.org/data/2.5/weather?q=Oslo&lang=no&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
+    'https://api.openweathermap.org/data/2.5/onecall?lat=59.9127&lon=10.7461&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
   )
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      document.querySelector('.oversikt').innerHTML = `
-      <h1>Været i dag</h1>
-      <h2>${data.name}:</h2> 
-      <p>Det er: ${data.main.temp} grader nå og ${data.weather[0].description}, men det føles som ${data.main.feels_like} grader.</p>
-      <p>Makstemperaturen var ${data.main.temp_max} og det laveste var ${data.main.temp_min}.</p>
-      <p>Vindstyrken er på ${data.wind.speed} km/t.</p>
 
+      let locationIcon = document.querySelector('.weather-icon');
+      const icon = data.current.weather[0].icon;
+      locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
+
+      document.querySelector('.grader').innerHTML = `
+      <h3>Oslo, Norge</h3> 
+     <div class="grader_font">${data.current.temp}°</div>
+
+      `;
+
+      document.querySelector('.oversikt').innerHTML = `
+      <p>Vindstyrke:</p><p class="bold">${data.current.wind_speed} m/s</p>
       `;
     });
 }
