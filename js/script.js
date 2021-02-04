@@ -5,20 +5,24 @@ function getWeather() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-
       let locationIcon = document.querySelector('.weather-icon');
       const icon = data.current.weather[0].icon;
       locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
 
       document.querySelector('.grader').innerHTML = `
       <h3>Oslo, Norge</h3> 
-     <div class="grader_font">${data.current.temp}°</div>
-
+      <div class="grader_font">${Math.round(data.current.temp)}°</div>
       `;
 
-      document.querySelector('.oversikt').innerHTML = `
+      document.querySelector('.vind').innerHTML = `
       <p>Vindstyrke:</p><p class="bold">${data.current.wind_speed} m/s</p>
+      `;
+
+      document.querySelector('.fuktighet').innerHTML = `
+      <p>Fuktighet:</p><p class="bold">${data.current.humidity} %</p>
       `;
     });
 }
 getWeather();
+
+// .then((data) => console.log(Math.round(data.current.temp)))
