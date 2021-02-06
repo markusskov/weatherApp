@@ -7,14 +7,73 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="deegree_container">
-      <div class="weather-icon"><img src="/icons/unknown.png" /></div>
-      <div class="grader"></div>
-    </div>
-    <div class="oversikt_container">
-      <div class="vind"></div>
-      <div class="fuktighet"></div>
-    </div>
+    <main>
+      <section class="glass">
+        <div class="dashboard">
+          <div class="user">
+            <h3>Markus Skov</h3>
+            <p>Not a weather expert</p>
+          </div>
+          <div class="links">
+            <div class="link"> 
+              <h2>Hottest Cities</h2>
+            </div>
+            <div class="link">            
+              <h2>Coldest Cities</h2>
+            </div>
+            <div class="link">            
+              <h2>Favorite Cities</h2>
+            </div>
+            <div class="link">             
+              <h2>7 Day Forecast</h2>
+            </div>
+          </div>
+        </div>
+        <div class="weather-dash">
+          <div class="search">
+            <h1>Search city</h1>
+            <input type="text" />
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="weather-icon">
+                <img src="./icons/unknown.png" alt="" />
+              </div>
+              <div class="card-info">
+                <h2>Oslo, Norway</h2>
+                <p class="vind">Vindstyrke:&nbsp;</p>
+                <p class="fuktighet">Fuktighet:&nbsp;</p>
+              </div>
+              <h2 class="grader"></h2>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <div class="weather-icon-molde">
+                  <img src="./icons/unknown.png" alt="" />
+                </div>
+                <div class="card-info">
+                  <h2>Molde, Norway</h2>
+                  <p class="vind-molde">Vindstyrke: &nbsp;</p>
+                  <p class="fuktighet-molde">Fuktighet: &nbsp;</p>
+                </div>
+                <h2 class="grader-molde"></h2>
+              </div>
+              <div class="cards">
+                <div class="card">
+                  <div class="weather-icon-trondheim">
+                    <img src="./icons/unknown.png" alt="" />
+                  </div>
+                  <div class="card-info">
+                    <h2>Trondheim, Norway</h2>
+                    <p class="vind-trondheim">Vindstyrke: &nbsp;</p>
+                    <p class="fuktighet-trondheim">Fuktighet: &nbsp;</p>
+                  </div>
+                  <h2 class="grader-trondheim"></h2>
+                </div>
+        </div>
+      </section>
+    </main>
+    <div class="circle1"></div>
     <script src="js/script.js"></script>
   </body>
 </html>
