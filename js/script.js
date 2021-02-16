@@ -1,77 +1,73 @@
-function getWeather() {
-  fetch(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=59.9127&lon=10.7461&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      let locationIcon = document.querySelector('.weather-icon');
-      const icon = data.current.weather[0].icon;
-      locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
+// Oslo API
 
-      document.querySelector('.grader').innerHTML = `
-      <div class="grader_font">${Math.round(data.current.temp)}°</div>
-      `;
+async function getWeatherOslo() {
+  try {
+    const response = await fetch(
+      'https://api.openweathermap.org/data/2.5/onecall?lat=59.9139&lon=10.7522&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
+    );
+    const data = await response.json();
+    console.log(data);
 
-      document.querySelector('.vind').innerHTML += ` 
-      <p class="bold">${data.current.wind_speed} m/s</p>
-      `;
+    document.querySelector('.oslo-degree').innerHTML = `${Math.round(
+      data.current.temp
+    )}°`;
 
-      document.querySelector('.fuktighet').innerHTML += `
-      <p class="bold">${data.current.humidity} %</p>
-      `;
-    });
+    document.querySelector('.oslo-info').innerHTML = `<p>Wind Speed: 
+    ${data.current.wind_speed} m/s </p>
+    <p>Humidity: ${data.current.humidity}%</p>
+    <p>Feels like: ${Math.round(data.current.feels_like)}°</p>
+    `;
+  } catch (error) {
+    console.log(error);
+  }
 }
-getWeather();
+getWeatherOslo();
 
-function getWeatherMolde() {
-  fetch(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=62.7372&lon=7.1607&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      let locationIcon = document.querySelector('.weather-icon-molde');
-      const icon = data.current.weather[0].icon;
-      locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
+// Molde API
 
-      document.querySelector('.grader-molde').innerHTML = `
-      <div class="grader_font">${Math.round(data.current.temp)}°</div>
-      `;
+async function getWeatherMolde() {
+  try {
+    const response = await fetch(
+      'https://api.openweathermap.org/data/2.5/onecall?lat=62.7372&lon=7.1607&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
+    );
+    const data = await response.json();
+    console.log(data);
 
-      document.querySelector('.vind-molde').innerHTML += ` 
-      <p class="bold">${data.current.wind_speed} m/s</p>
-      `;
+    document.querySelector('.molde-degree').innerHTML = `${Math.round(
+      data.current.temp
+    )}°`;
 
-      document.querySelector('.fuktighet-molde').innerHTML += `
-      <p class="bold">${data.current.humidity} %</p>
-      `;
-    });
+    document.querySelector('.molde-info').innerHTML = `<p>Wind Speed: 
+    ${data.current.wind_speed} m/s </p>
+    <p>Humidity: ${data.current.humidity}%</p>
+    <p>Feels like: ${Math.round(data.current.feels_like)}°</p>
+    `;
+  } catch (error) {
+    console.log(error);
+  }
 }
 getWeatherMolde();
 
-function getWeatherTrondheim() {
-  fetch(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=63.4305&lon=10.3951&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      let locationIcon = document.querySelector('.weather-icon-trondheim');
-      const icon = data.current.weather[0].icon;
-      locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
+// Trondheim API
 
-      document.querySelector('.grader-trondheim').innerHTML = `
-      <div class="grader_font">${Math.round(data.current.temp)}°</div>
-      `;
+async function getWeatherTrondheim() {
+  try {
+    const response = await fetch(
+      'https://api.openweathermap.org/data/2.5/onecall?lat=63.4305&lon=10.3951&appid=c00a488091e665d81db55d4e2948cf0d&units=metric'
+    );
+    const data = await response.json();
+    console.log(data);
 
-      document.querySelector('.vind-trondheim').innerHTML += ` 
-      <p class="bold">${data.current.wind_speed} m/s</p>
-      `;
-
-      document.querySelector('.fuktighet-trondheim').innerHTML += `
-      <p class="bold">${data.current.humidity} %</p>
-      `;
-    });
+    document.querySelector('.trondheim-degree').innerHTML = `${Math.round(
+      data.current.temp
+    )}°`;
+    document.querySelector('.trondheim-info').innerHTML = `<p>Wind Speed: 
+    ${data.current.wind_speed} m/s </p>
+    <p>Humidity: ${data.current.humidity}%</p>
+    <p>Feels like: ${Math.round(data.current.feels_like)}°</p>
+    `;
+  } catch (error) {
+    console.log(error);
+  }
 }
 getWeatherTrondheim();

@@ -4,76 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Weatherly</title>
   </head>
   <body>
-    <main>
-      <section class="glass">
-        <div class="dashboard">
-          <div class="user">
-            <h3>Markus Skov</h3>
-            <p>Not a weather expert</p>
-          </div>
-          <div class="links">
-            <div class="link"> 
-              <h2>Hottest Cities</h2>
-            </div>
-            <div class="link">            
-              <h2>Coldest Cities</h2>
-            </div>
-            <div class="link">            
-              <h2>Favorite Cities</h2>
-            </div>
-            <div class="link">             
-              <h2>7 Day Forecast</h2>
-            </div>
-          </div>
+    <div class="container">
+      <div class="card">
+        <div class="content">
+          <h2 class="oslo-degree">01</h2>
+          <h3>Oslo</h3>
+          <p class="oslo-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem nam
+            tenetur possimus earum sunt dicta consequatur porro aut voluptatum?
+            Exercitationem!
+          </p>
+          <a href="#">More Info</a>
         </div>
-        <div class="weather-dash">
-          <div class="search">
-            <h1>Search city</h1>
-            <input type="text" />
-          </div>
-          <div class="cards">
-            <div class="card">
-              <div class="weather-icon">
-                <img src="./icons/unknown.png" alt="" />
-              </div>
-              <div class="card-info">
-                <h2>Oslo, Norway</h2>
-                <p class="vind">Vindstyrke:&nbsp;</p>
-                <p class="fuktighet">Fuktighet:&nbsp;</p>
-              </div>
-              <h2 class="grader"></h2>
-            </div>
-            <div class="cards">
-              <div class="card">
-                <div class="weather-icon-molde">
-                  <img src="./icons/unknown.png" alt="" />
-                </div>
-                <div class="card-info">
-                  <h2>Molde, Norway</h2>
-                  <p class="vind-molde">Vindstyrke: &nbsp;</p>
-                  <p class="fuktighet-molde">Fuktighet: &nbsp;</p>
-                </div>
-                <h2 class="grader-molde"></h2>
-              </div>
-              <div class="cards">
-                <div class="card">
-                  <div class="weather-icon-trondheim">
-                    <img src="./icons/unknown.png" alt="" />
-                  </div>
-                  <div class="card-info">
-                    <h2>Trondheim, Norway</h2>
-                    <p class="vind-trondheim">Vindstyrke: &nbsp;</p>
-                    <p class="fuktighet-trondheim">Fuktighet: &nbsp;</p>
-                  </div>
-                  <h2 class="grader-trondheim"></h2>
-                </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <h2 class="molde-degree">02</h2>
+          <h3>Molde</h3>
+          <p class="molde-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem nam
+            tenetur possimus earum sunt dicta consequatur porro aut voluptatum?
+            Exercitationem!
+          </p>
+          <a href="#">More Info</a>
         </div>
-      </section>
-    </main>
-    <div class="circle1"></div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <h2 class="trondheim-degree">03</h2>
+          <h3>Trondheim</h3>
+          <p class="trondheim-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem nam
+            tenetur possimus earum sunt dicta consequatur porro aut voluptatum?
+            Exercitationem!
+          </p>
+          <a href="#">More Info</a>
+        </div>
+      </div>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
